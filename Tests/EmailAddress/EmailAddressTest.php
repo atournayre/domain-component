@@ -3,7 +3,9 @@
 namespace Atournayre\Component\Domain\Tests;
 
 use Atournayre\Component\Domain\EmailAddress\EmailAddress;
+use Atournayre\Component\Domain\Exception\ExceptionInterface;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 class EmailAddressTest extends TestCase
 {
@@ -55,5 +57,29 @@ class EmailAddressTest extends TestCase
     {
         $emailAddress = new EmailAddress('email@example.com');
         $this->assertEquals('example.com', $emailAddress->domain());
+    }
+
+    public function testEmailIsValidatedInFactoryAndIsString()
+    {
+        $email = 'email@example.com';
+        $emailAddress = self::fakeFactory($email);
+
+        $this->assertEquals($email, $emailAddress->email);
+    }
+
+    /**
+     * @param string $emailAddress
+     * @return stdClass
+     * @throws ExceptionInterface
+     */
+    private static function fakeFactory(string $emailAddress): stdClass
+    {
+        $email = new EmailAddress($emailAddress);
+        $email->validate();
+
+        $stdObject = new stdClass();
+        $stdObject->email = $email;
+
+        return $stdObject;
     }
 }
