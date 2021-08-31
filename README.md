@@ -39,6 +39,22 @@ $emailAddress->isValid();
 $emailAddress->validate();
 ```
 
+## Translations
+
+In controller, services ...
+```php
+use Atournayre\Component\Domain\Exception\Exception;
+
+try {}
+catch(Exception $e) {
+     $translatedMessage = vsprintf($translator->trans($e->getMessageKey()), $e->getMessageData()));
+}
+```
+
+In Twig
+```html
+<div class="alert alert-danger">{{ error.messageKey|trans|format(error.messageData) }}</div>
+```
 
 
 ## Contributing

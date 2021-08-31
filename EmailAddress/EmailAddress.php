@@ -2,7 +2,9 @@
 
 namespace Atournayre\Component\Domain\EmailAddress;
 
-use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressException;
+use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsNotValidException;
+use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsEmptyException;
+use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressShouldContainsArobaseException;
 use Atournayre\Component\Domain\Exception\ExceptionInterface;
 use Atournayre\Component\Domain\ValidationInterface;
 
@@ -20,16 +22,16 @@ class EmailAddress implements ValidationInterface
      */
     public function validate(): void
     {
-        if (null === $this->emailAddress || '' === $this->emailAddress) {
-            throw EmailAddressException::emailIsEmpty($this->emailAddress);
+        if (empty($this->emailAddress)) {
+            throw new EmailAddressIsEmptyException([$this->emailAddress]);
         }
 
         if (!strpos($this->emailAddress, '@')) {
-            throw EmailAddressException::emailShouldContainsArobase($this->emailAddress);
+            throw new EmailAddressShouldContainsArobaseException();
         }
 
         if (!filter_var($this->emailAddress, FILTER_VALIDATE_EMAIL)) {
-            throw EmailAddressException::emailIsNotValid($this->emailAddress);
+            throw new EmailAddressIsNotValidException([$this->emailAddress]);
         }
     }
 

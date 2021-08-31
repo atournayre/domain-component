@@ -3,6 +3,9 @@
 namespace Atournayre\Component\Domain\Tests;
 
 use Atournayre\Component\Domain\EmailAddress\EmailAddress;
+use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsEmptyException;
+use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsNotValidException;
+use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressShouldContainsArobaseException;
 use Atournayre\Component\Domain\Exception\ExceptionInterface;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -65,6 +68,45 @@ class EmailAddressTest extends TestCase
         $emailAddress = self::fakeFactory($email);
 
         $this->assertEquals($email, $emailAddress->email);
+    }
+
+    public function testEmailAddressNullThrowException()
+    {
+        try {
+            $emailAddress = new EmailAddress(null);
+            $emailAddress->validate();
+        } catch (EmailAddressIsEmptyException $e) {
+            $this->assertEquals(
+                'Email address "" is empty.',
+                vsprintf($e->getMessageKey(), $e->getMessageData())
+            );
+        }
+    }
+
+    public function testEmailAddressWithoutArobaseThrowException()
+    {
+        try {
+            $emailAddress = new EmailAddress('emailexample.com');
+            $emailAddress->validate();
+        } catch (EmailAddressShouldContainsArobaseException $e) {
+            $this->assertEquals(
+                'Email address should contains @.',
+                vsprintf($e->getMessageKey(), [])
+            );
+        }
+    }
+
+    public function testEmailAddressInvalidThrowException()
+    {
+        try {
+            $emailAddress = new EmailAddress('email@example');
+            $emailAddress->validate();
+        } catch (EmailAddressIsNotValidException $e) {
+            $this->assertEquals(
+                'Email address "email@example" is not valid.',
+                vsprintf($e->getMessageKey(), $e->getMessageData())
+            );
+        }
     }
 
     /**
