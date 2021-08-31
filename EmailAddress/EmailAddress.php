@@ -2,13 +2,14 @@
 
 namespace Atournayre\Component\Domain\EmailAddress;
 
+use Atournayre\Component\Domain\CustomType;
 use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsNotValidException;
 use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsEmptyException;
 use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressShouldContainsArobaseException;
 use Atournayre\Component\Domain\Exception\ExceptionInterface;
 use Atournayre\Component\Domain\ValidationInterface;
 
-class EmailAddress implements ValidationInterface
+class EmailAddress extends CustomType implements ValidationInterface
 {
     private ?string $emailAddress;
 
@@ -32,16 +33,6 @@ class EmailAddress implements ValidationInterface
 
         if (!filter_var($this->emailAddress, FILTER_VALIDATE_EMAIL)) {
             throw new EmailAddressIsNotValidException([$this->emailAddress]);
-        }
-    }
-
-    public function isValid(): bool
-    {
-        try {
-            $this->validate();
-            return true;
-        } catch (ExceptionInterface $e) {
-            return false;
         }
     }
 
