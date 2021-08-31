@@ -11,6 +11,7 @@ composer require atournayre/domain-component
 | Type | Description |
 |---|---|
 | EmailAddress | Email addresses |
+| LastName | Human last name |
 
 More [Documentation](doc/doc.md)
 
@@ -20,7 +21,7 @@ Each custom type implement ``ValidationInterface``.
 
 Validation methods can be used in :
 * Domain entities
-* Form contraints
+* Form constraints
 * Api Platform Data Persister
 * anywhere!
 
