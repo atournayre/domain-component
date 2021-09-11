@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\LastName\Exception;
+namespace Atournayre\Component\Domain\Type\LastName\Exception;
 
 use Atournayre\Component\Domain\Exception\Exception;
 

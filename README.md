@@ -29,7 +29,7 @@ Validation methods can be used in :
 
 ### Email address
 ```php
-use Atournayre\Component\Domain\EmailAddress\EmailAddress;
+use Atournayre\Component\Domain\Type\EmailAddress\EmailAddress;
 
 $emailAddress = new EmailAddress('email@example.com');
 
@@ -44,7 +44,7 @@ $emailAddress->validate();
 
 In controller, services ...
 ```php
-use Atournayre\Component\Domain\Exception\Exception;
+use Atournayre\Component\Domain\Type\Exception\Exception;
 
 try {}
 catch(Exception $e) {
