@@ -9,7 +9,10 @@
         }
     ],
     "require": {
-        "php": ">=7.4.3"
+        "php": ">=7.4.3",
+        "ramsey/uuid": "^4.2",
+        "ramsey/uuid-doctrine": "^1.7",
+        "doctrine/orm": "^2.9"
     },
     "autoload": {
         "psr-4": {
