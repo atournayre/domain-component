@@ -1,12 +1,12 @@
 <?php
 
-namespace Atournayre\Component\Domain\LastName;
+namespace Atournayre\Component\Domain\Type\LastName;
 
-use Atournayre\Component\Domain\CustomType;
+use Atournayre\Component\Domain\Type\CustomType;
 use Atournayre\Component\Domain\Exception\ExceptionInterface;
-use Atournayre\Component\Domain\LastName\Exception\LastNameIsEmptyException;
-use Atournayre\Component\Domain\LastName\Exception\LastNameShouldBeAStringException;
-use Atournayre\Component\Domain\ValidationInterface;
+use Atournayre\Component\Domain\Type\LastName\Exception\LastNameIsEmptyException;
+use Atournayre\Component\Domain\Type\LastName\Exception\LastNameShouldBeAStringException;
+use Atournayre\Component\Domain\Type\ValidationInterface;
 
 class LastName extends CustomType implements ValidationInterface
 {

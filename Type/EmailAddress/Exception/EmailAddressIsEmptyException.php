@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\EmailAddress\Exception;
+namespace Atournayre\Component\Domain\Type\EmailAddress\Exception;
 
 use Atournayre\Component\Domain\Exception\Exception;
 

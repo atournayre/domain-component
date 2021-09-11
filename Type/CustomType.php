@@ -1,8 +1,7 @@
 <?php
 
-namespace Atournayre\Component\Domain;
+namespace Atournayre\Component\Domain\Type;
 
-use Atournayre\Component\Domain\Exception\Exception;
 use Atournayre\Component\Domain\Exception\ExceptionInterface;
 
 class CustomType implements ValidationInterface

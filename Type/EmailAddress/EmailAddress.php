@@ -1,13 +1,13 @@
 <?php
 
-namespace Atournayre\Component\Domain\EmailAddress;
+namespace Atournayre\Component\Domain\Type\EmailAddress;
 
-use Atournayre\Component\Domain\CustomType;
-use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsNotValidException;
-use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsEmptyException;
-use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressShouldContainsArobaseException;
+use Atournayre\Component\Domain\Type\CustomType;
+use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressIsNotValidException;
+use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressIsEmptyException;
+use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressShouldContainsArobaseException;
 use Atournayre\Component\Domain\Exception\ExceptionInterface;
-use Atournayre\Component\Domain\ValidationInterface;
+use Atournayre\Component\Domain\Type\ValidationInterface;
 
 class EmailAddress extends CustomType implements ValidationInterface
 {
@@ -41,7 +41,7 @@ class EmailAddress extends CustomType implements ValidationInterface
         return $this->emailAddress;
     }
 
-    public function domain()
+    public function domain(): string
     {
         return substr($this->emailAddress, strpos($this->emailAddress, '@') + 1, strlen($this->emailAddress));
     }

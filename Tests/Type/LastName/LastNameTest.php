@@ -1,9 +1,10 @@
 <?php
 
-namespace Atournayre\Component\Domain\LastName;
+namespace Atournayre\Component\Domain\Tests\Type;
 
-use Atournayre\Component\Domain\LastName\Exception\LastNameIsEmptyException;
-use Atournayre\Component\Domain\LastName\Exception\LastNameShouldBeAStringException;
+use Atournayre\Component\Domain\Type\LastName\Exception\LastNameIsEmptyException;
+use Atournayre\Component\Domain\Type\LastName\Exception\LastNameShouldBeAStringException;
+use Atournayre\Component\Domain\Type\LastName\LastName;
 use PHPUnit\Framework\TestCase;
 
 class LastNameTest extends TestCase

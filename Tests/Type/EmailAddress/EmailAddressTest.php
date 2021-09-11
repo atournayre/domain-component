@@ -1,11 +1,11 @@
 <?php
 
-namespace Atournayre\Component\Domain\Tests;
+namespace Atournayre\Component\Domain\Tests\Type;
 
-use Atournayre\Component\Domain\EmailAddress\EmailAddress;
-use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsEmptyException;
-use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressIsNotValidException;
-use Atournayre\Component\Domain\EmailAddress\Exception\EmailAddressShouldContainsArobaseException;
+use Atournayre\Component\Domain\Type\EmailAddress\EmailAddress;
+use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressIsEmptyException;
+use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressIsNotValidException;
+use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressShouldContainsArobaseException;
 use Atournayre\Component\Domain\Exception\ExceptionInterface;
 use PHPUnit\Framework\TestCase;
 use stdClass;
