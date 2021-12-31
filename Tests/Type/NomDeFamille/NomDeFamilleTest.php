@@ -9,7 +9,7 @@ class NomDeFamilleTest extends TestCase
 {
     public function testNomDeFamilleValide()
     {
-        $lastName = new NomDeFamille('René, (De) La Motte-Piquet');
-        $this->assertTrue($lastName->estValide());
+        $nomDeFamille = new NomDeFamille('René, (De) La Motte-Piquet');
+        $this->assertTrue($nomDeFamille->estValide());
     }
 }
