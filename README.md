@@ -14,7 +14,7 @@ composer require atournayre/domain-component
 | Type | Description |
 |---|---|
 | AdresseEmail | Email addresses |
-| LastName | Human last name |
+| NomDeFamille | Human last name |
 
 More [Documentation](doc/doc.md)
 

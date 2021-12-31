@@ -1,25 +1,25 @@
 <?php
 declare(strict_types=1);
 
-namespace Atournayre\Component\Domain\Type\LastName;
+namespace Atournayre\Component\Domain\Type\NomDeFamille;
 
 use Atournayre\Component\Domain\Constraint as Assert;
 use Atournayre\Component\Domain\Type\TypePersonnalise;
 use Atournayre\Component\Domain\Type\ValidationInterface;
 
-class LastName extends TypePersonnalise implements ValidationInterface
+class NomDeFamille extends TypePersonnalise implements ValidationInterface
 {
     /**
      * @var string|null
      */
-    private ?string $lastName;
+    private ?string $nomDeFamille;
 
     /**
-     * @param string|null $lastName
+     * @param string|null $nomDeFamille
      */
-    public function __construct(?string $lastName)
+    public function __construct(?string $nomDeFamille)
     {
-        $this->lastName = $lastName;
+        $this->nomDeFamille = $nomDeFamille;
     }
 
     /**
@@ -27,8 +27,8 @@ class LastName extends TypePersonnalise implements ValidationInterface
      */
     public function estValide(): bool
     {
-        return parent::verifierLaValidite($this->lastName, [
-            new Assert\LastName\LastName()
+        return parent::verifierLaValidite($this->nomDeFamille, [
+            new Assert\NomDeFamille\NomDeFamille()
         ]);
     }
 
@@ -37,6 +37,6 @@ class LastName extends TypePersonnalise implements ValidationInterface
      */
     public function __toString(): string
     {
-        return $this->lastName;
+        return $this->nomDeFamille;
     }
 }
