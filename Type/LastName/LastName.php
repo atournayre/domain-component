@@ -25,9 +25,9 @@ class LastName extends CustomType implements ValidationInterface
     /**
      * @return bool
      */
-    public function isValid(): bool
+    public function estValide(): bool
     {
-        return parent::checkIfIsValid($this->lastName, [
+        return parent::verifierLaValidite($this->lastName, [
             new Assert\LastName\LastName()
         ]);
     }

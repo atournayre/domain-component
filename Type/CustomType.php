@@ -28,7 +28,7 @@ class CustomType
      *
      * @return bool
      */
-    public function checkIfIsValid($valeur = null, array $contraintes = null): bool
+    public function verifierLaValidite($valeur = null, array $contraintes = null): bool
     {
         return !$this->isNotValid($valeur, $contraintes);
     }

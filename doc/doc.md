@@ -3,10 +3,9 @@
 ## Email
 
 ```php
-use Atournayre\Component\Domain\EmailAddress\EmailAddress;
+use Atournayre\Component\Domain\AdresseEmail\AdresseEmail;
 
-// This method throws a EmailAddressException if not valid. 
-$emailAddress = new EmailAddress('email@example.com');
+$emailAddress = new AdresseEmail('email@example.com');
 
 // This method return true if email address is valid, false if not valid.
 $emailAddress->isValid();
@@ -17,20 +16,16 @@ $domain = $emailAddress->domain()
 
 ### Example of validation usage
 ```php
-use Atournayre\Component\Domain\EmailAddress\EmailAddress;
-use Atournayre\Component\Domain\EmailAddress\EmailAddress\Exception;
+use Atournayre\Component\Domain\AdresseEmail\AdresseEmail;
 
 class CustomFactory
 {
     /**
      * @return stdClass
-     * @throws EmailAddressIsEmptyException
-     * @throws EmailAddressIsNotValidException
-     * @throws EmailAddressShouldContainsArobaseException
      */
     public function create(): stdClass
     {
-        $email = new EmailAddress($emailAddress);
+        $email = new AdresseEmail($emailAddress);
 
         $stdObject = new stdClass();
         $stdObject->email = $email;

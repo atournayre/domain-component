@@ -33,9 +33,9 @@ class Name extends CustomType implements ValidationInterface
     /**
      * @return bool
      */
-    public function isValid(): bool
+    public function estValide(): bool
     {
-        return parent::checkIfIsValid($this->name, [
+        return parent::verifierLaValidite($this->name, [
             new Assert\Name\Name(),
         ]);
     }

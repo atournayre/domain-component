@@ -10,6 +10,6 @@ class LastNameTest extends TestCase
     public function testLastNameValid()
     {
         $lastName = new LastName('René, (De) La Motte-Piquet');
-        $this->assertTrue($lastName->isValid());
+        $this->assertTrue($lastName->estValide());
     }
 }
