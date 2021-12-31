@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\LastName;
+namespace Atournayre\Component\Domain\Constraint\NomDeFamille;
 
 use Atournayre\Component\Domain\Constraint\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
@@ -11,22 +11,22 @@ use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-class LastNameValidator extends ConstraintValidator
+class NomDeFamilleValidator extends ConstraintValidator
 {
     /**
      * {@inheritdoc}
      */
     public function validate($value, Constraint $constraint)
     {
-        if (!$constraint instanceof LastName) {
-            throw new UnexpectedTypeException($constraint, LastName::class);
+        if (!$constraint instanceof NomDeFamille) {
+            throw new UnexpectedTypeException($constraint, NomDeFamille::class);
         }
 
         $this->validateConstraints($value, [
             new Regex([
                 'pattern' => "/\d/",
                 'match'   => false,
-                'message' => 'Your last name cannot contain a number.',
+                'message' => 'Votre nom de famille contient un nombre.',
             ]),
             new NotBlank(),
             new NotNull(),

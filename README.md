@@ -13,8 +13,8 @@ composer require atournayre/domain-component
 ## Custom types
 | Type | Description |
 |---|---|
-| EmailAddress | Email addresses |
-| LastName | Human last name |
+| AdresseEmail | Email addresses |
+| NomDeFamille | Human last name |
 
 More [Documentation](doc/doc.md)
 
@@ -31,13 +31,14 @@ Validation methods can be used in :
 ## Examples
 
 ### Email address
-```php
-use Atournayre\Component\Domain\Type\EmailAddress\EmailAddress;
 
-$emailAddress = new EmailAddress('email@example.com');
+```php
+use Atournayre\Component\Domain\Type\AdresseEmail\AdresseEmail;
+
+$emailAddress = new AdresseEmail('email@example.com');
 
 // This method return true if email address is valid, false if not valid.
-$emailAddress->isValid();
+$emailAddress->estValide();
 ```
 
 ## Translations

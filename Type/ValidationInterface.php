@@ -7,5 +7,5 @@ interface ValidationInterface
     /**
      * @throws bool
      */
-    public function isValid();
+    public function estValide();
 }
