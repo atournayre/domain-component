@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Atournayre\Component\Domain\Type\NomDeFamille;
+namespace Atournayre\Component\Domain\Type\Nom;
 
 use Atournayre\Component\Domain\Constraint as Assert;
 use Atournayre\Component\Domain\Type\TypePersonnalise;
 use Atournayre\Component\Domain\Type\ValidationInterface;
 
-class Name extends TypePersonnalise implements ValidationInterface
+class Nom extends TypePersonnalise implements ValidationInterface
 {
     /**
      * @var string|null
@@ -36,7 +36,7 @@ class Name extends TypePersonnalise implements ValidationInterface
     public function estValide(): bool
     {
         return parent::verifierLaValidite($this->name, [
-            new Assert\Name\Name(),
+            new Assert\Nom\Nom(),
         ]);
     }
 }
