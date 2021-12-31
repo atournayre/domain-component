@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Atournayre\Component\Domain\Type\LastName;
 
@@ -10,8 +11,14 @@ use Atournayre\Component\Domain\Type\ValidationInterface;
 
 class LastName extends CustomType implements ValidationInterface
 {
+    /**
+     * @var string|null
+     */
     private ?string $lastName;
 
+    /**
+     * @param string|null $lastName
+     */
     public function __construct(?string $lastName)
     {
         $this->lastName = $lastName;
@@ -33,6 +40,9 @@ class LastName extends CustomType implements ValidationInterface
         }
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->lastName;
