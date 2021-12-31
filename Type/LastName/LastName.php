@@ -11,6 +11,8 @@ use Atournayre\Component\Domain\Type\ValidationInterface;
 
 class LastName extends CustomType implements ValidationInterface
 {
+    const FORBIDEN_CHARACTERS = '1234567890&~!"#$%&*+./:;<=>?@[\]^_`{|}~';
+
     /**
      * @var string|null
      */
@@ -33,9 +35,7 @@ class LastName extends CustomType implements ValidationInterface
             throw new LastNameIsEmptyException([$this->lastName]);
         }
 
-        $lastNameClean = str_replace(str_split( '1234567890&~!"#$%&*+./:;<=>?@[\]^_`{|}~'), '', $this->lastName);
-
-        if ($lastNameClean !== $this->lastName) {
+        if ($this->lastNameIsDifferentThanLastNameWithoutForbiddenCharacters()) {
             throw new LastNameShouldBeAStringException([$this->lastName]);
         }
     }
@@ -46,5 +46,21 @@ class LastName extends CustomType implements ValidationInterface
     public function __toString(): string
     {
         return $this->lastName;
+    }
+
+    /**
+     * @return string|null
+     */
+    private function cleanupWithoutForbiddenCharacters(): string
+    {
+        return str_replace(str_split(self::FORBIDEN_CHARACTERS), '', $this->lastName);
+    }
+
+    /**
+     * @return bool
+     */
+    private function lastNameIsDifferentThanLastNameWithoutForbiddenCharacters(): bool
+    {
+        return $this->lastName !== $this->cleanupWithoutForbiddenCharacters();
     }
 }
