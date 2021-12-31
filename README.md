@@ -38,9 +38,6 @@ $emailAddress = new EmailAddress('email@example.com');
 
 // This method return true if email address is valid, false if not valid.
 $emailAddress->isValid();
-
-// This method throws a EmailAddressException if not valid. 
-$emailAddress->validate();
 ```
 
 ## Translations
