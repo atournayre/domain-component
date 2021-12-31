@@ -7,6 +7,9 @@ This component provide custom types with validation rules for Domain entities.
 composer require atournayre/domain-component
 ```
 
+## Traits
+* UUID
+
 ## Custom types
 | Type | Description |
 |---|---|
