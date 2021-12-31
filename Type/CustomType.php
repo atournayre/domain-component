@@ -6,11 +6,15 @@ use Atournayre\Component\Domain\Exception\ExceptionInterface;
 
 class CustomType implements ValidationInterface
 {
-    public function validate()
-    {
-    }
+    /**
+     * @inheritDoc
+     */
+    public function validate() {}
 
-    public function isValid()
+    /**
+     * @return bool
+     */
+    public function isValid(): bool
     {
         try {
             $this->validate();
