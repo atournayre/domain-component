@@ -9,15 +9,17 @@ class CustomType implements ValidationInterface
     /**
      * @inheritDoc
      */
-    public function validate() {}
+    public function validate($value) {}
 
     /**
+     * @param mixed|null $value
+     *
      * @return bool
      */
-    public function isValid(): bool
+    public function isValid($value = null): bool
     {
         try {
-            $this->validate();
+            $this->validate($value);
             return true;
         } catch (ExceptionInterface $e) {
             return false;

@@ -21,27 +21,42 @@ class LastName extends CustomType implements ValidationInterface
     /**
      * @param string|null $lastName
      *
-     * @throws ExceptionInterface
+     * @throws LastNameIsEmptyException
+     * @throws LastNameShouldBeAStringException
      */
     public function __construct(?string $lastName)
     {
-        $this->validate();
+        $this->validate($lastName);
 
         $this->lastName = $lastName;
     }
 
     /**
-     * @throws ExceptionInterface
+     * @param $value
+     *
+     * @return void
+     * @throws LastNameIsEmptyException
+     * @throws LastNameShouldBeAStringException
      */
-    public function validate(): void
+    public function validate($value): void
     {
-        if (empty($this->lastName)) {
-            throw new LastNameIsEmptyException([$this->lastName]);
+        if (empty($value)) {
+            throw new LastNameIsEmptyException([$value]);
         }
 
-        if ($this->lastNameIsDifferentThanLastNameWithoutForbiddenCharacters()) {
-            throw new LastNameShouldBeAStringException([$this->lastName]);
+        if ($this->lastNameIsDifferentThanLastNameWithoutForbiddenCharacters($value)) {
+            throw new LastNameShouldBeAStringException([$value]);
         }
+    }
+
+    /**
+     * @param mixed|null $value
+     *
+     * @return bool
+     */
+    public function isValid($value = null): bool
+    {
+        return parent::isValid($this->lastName);
     }
 
     /**
@@ -53,18 +68,22 @@ class LastName extends CustomType implements ValidationInterface
     }
 
     /**
+     * @param string|null $lastName
+     *
      * @return string|null
      */
-    private function cleanupWithoutForbiddenCharacters(): string
+    private function cleanupWithoutForbiddenCharacters(?string $lastName): ?string
     {
-        return str_replace(str_split(self::FORBIDEN_CHARACTERS), '', $this->lastName);
+        return str_replace(str_split(self::FORBIDEN_CHARACTERS), '', $lastName);
     }
 
     /**
+     * @param string|null $lastName
+     *
      * @return bool
      */
-    private function lastNameIsDifferentThanLastNameWithoutForbiddenCharacters(): bool
+    private function lastNameIsDifferentThanLastNameWithoutForbiddenCharacters(?string $lastName): bool
     {
-        return $this->lastName !== $this->cleanupWithoutForbiddenCharacters();
+        return $lastName !== $this->cleanupWithoutForbiddenCharacters($lastName);
     }
 }

@@ -19,28 +19,48 @@ class EmailAddress extends CustomType implements ValidationInterface
 
     /**
      * @param string|null $emailAddress
+     *
+     * @throws EmailAddressIsEmptyException
+     * @throws EmailAddressIsNotValidException
+     * @throws EmailAddressShouldContainsArobaseException
      */
     public function __construct(?string $emailAddress)
     {
+        $this->validate($emailAddress);
+
         $this->emailAddress = $emailAddress;
     }
 
     /**
-     * @throws ExceptionInterface
+     * @param $value
+     *
+     * @throws EmailAddressIsEmptyException
+     * @throws EmailAddressIsNotValidException
+     * @throws EmailAddressShouldContainsArobaseException
      */
-    public function validate(): void
+    public function validate($value): void
     {
-        if (empty($this->emailAddress)) {
-            throw new EmailAddressIsEmptyException([$this->emailAddress]);
+        if (empty($value)) {
+            throw new EmailAddressIsEmptyException([$value]);
         }
 
-        if (!strpos($this->emailAddress, '@')) {
+        if (!strpos($value, '@')) {
             throw new EmailAddressShouldContainsArobaseException();
         }
 
-        if (!filter_var($this->emailAddress, FILTER_VALIDATE_EMAIL)) {
-            throw new EmailAddressIsNotValidException([$this->emailAddress]);
+        if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+            throw new EmailAddressIsNotValidException([$value]);
         }
+    }
+
+    /**
+     * @param mixed|null $value
+     *
+     * @return bool
+     */
+    public function isValid($value = null): bool
+    {
+        return parent::isValid($this->emailAddress);
     }
 
     /**
