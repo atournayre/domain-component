@@ -27,7 +27,7 @@ class NomDeFamille extends TypePersonnalise implements ValidationInterface
      */
     public function estValide(): bool
     {
-        return parent::verifierLaValidite($this->nomDeFamille, [
+        return $this->verifierLaValidite($this->nomDeFamille, [
             new Assert\NomDeFamille\NomDeFamille()
         ]);
     }

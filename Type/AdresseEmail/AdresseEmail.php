@@ -27,7 +27,7 @@ class AdresseEmail extends TypePersonnalise implements ValidationInterface
      */
     public function estValide(): bool
     {
-        return parent::verifierLaValidite($this->adresseEmail, [
+        return $this->verifierLaValidite($this->adresseEmail, [
             new Assert\AdresseEmail\AdresseEmail(),
         ]);
     }
