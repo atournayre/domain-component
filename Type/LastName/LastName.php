@@ -20,9 +20,13 @@ class LastName extends CustomType implements ValidationInterface
 
     /**
      * @param string|null $lastName
+     *
+     * @throws ExceptionInterface
      */
     public function __construct(?string $lastName)
     {
+        $this->validate();
+
         $this->lastName = $lastName;
     }
 
