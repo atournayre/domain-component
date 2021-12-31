@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Traits;
+namespace Atournayre\Component\Domain\Type\UUID;
 
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\UuidInterface;

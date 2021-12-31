@@ -12,8 +12,7 @@ class LastNameTest extends TestCase
     public function testLastNameIsEmptyThrowException()
     {
         try {
-            $lastName = new LastName('');
-            $lastName->validate();
+            new LastName('');
         } catch (LastNameIsEmptyException $e) {
             $this->assertEquals(
                 'A lastname must not be empty.',
@@ -25,8 +24,7 @@ class LastNameTest extends TestCase
     public function testLastNameContainsOnlyString()
     {
         try {
-            $lastName = new LastName('Aurélien7');
-            $lastName->validate();
+            new LastName('Aurélien7');
         } catch (LastNameShouldBeAStringException $e) {
             $this->assertEquals(
                 'A lastname must contains only alpha characters. You provide "Aurélien7" as lastname.',
@@ -38,7 +36,6 @@ class LastNameTest extends TestCase
     public function testLastNameValid()
     {
         $lastName = new LastName('René, (De) La Motte-Piquet');
-        //$lastName = new LastName('Robert De La Motte Piquet');
         $this->assertTrue($lastName->isValid());
     }
 }

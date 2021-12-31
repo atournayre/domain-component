@@ -6,14 +6,20 @@ use Atournayre\Component\Domain\Exception\ExceptionInterface;
 
 class CustomType implements ValidationInterface
 {
-    public function validate()
-    {
-    }
+    /**
+     * @inheritDoc
+     */
+    public function validate($value) {}
 
-    public function isValid()
+    /**
+     * @param mixed|null $value
+     *
+     * @return bool
+     */
+    public function isValid($value = null): bool
     {
         try {
-            $this->validate();
+            $this->validate($value);
             return true;
         } catch (ExceptionInterface $e) {
             return false;

@@ -2,6 +2,7 @@
 
 namespace Atournayre\Component\Domain\Tests\Type;
 
+use Atournayre\Component\Domain\Exception\Exception;
 use Atournayre\Component\Domain\Type\EmailAddress\EmailAddress;
 use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressIsEmptyException;
 use Atournayre\Component\Domain\Type\EmailAddress\Exception\EmailAddressIsNotValidException;
@@ -12,7 +13,10 @@ use stdClass;
 
 class EmailAddressTest extends TestCase
 {
-    public function getValidEmails()
+    /**
+     * @return array
+     */
+    private function getValidEmails(): array
     {
         return [
             'fabien@symfony.com',
@@ -21,7 +25,10 @@ class EmailAddressTest extends TestCase
         ];
     }
 
-    public function getInvalidEmails()
+    /**
+     * @return array
+     */
+    private function getInvalidEmails(): array
     {
         return [
             'example',
@@ -43,9 +50,11 @@ class EmailAddressTest extends TestCase
     public function testInValidEmails()
     {
         foreach ($this->getInValidEmails() as $inValidEmail) {
-            $emailAddress = new EmailAddress($inValidEmail);
-
-            $this->assertFalse($emailAddress->isValid());
+            try {
+                new EmailAddress($inValidEmail);
+            } catch (Exception $e) {
+                $this->assertNotNull($e->getMessageKey());
+            }
         }
     }
 
@@ -73,8 +82,7 @@ class EmailAddressTest extends TestCase
     public function testEmailAddressNullThrowException()
     {
         try {
-            $emailAddress = new EmailAddress(null);
-            $emailAddress->validate();
+            new EmailAddress(null);
         } catch (EmailAddressIsEmptyException $e) {
             $this->assertEquals(
                 'Email address "" is empty.',
@@ -86,8 +94,7 @@ class EmailAddressTest extends TestCase
     public function testEmailAddressWithoutArobaseThrowException()
     {
         try {
-            $emailAddress = new EmailAddress('emailexample.com');
-            $emailAddress->validate();
+            new EmailAddress('emailexample.com');
         } catch (EmailAddressShouldContainsArobaseException $e) {
             $this->assertEquals(
                 'Email address should contains @.',
@@ -99,8 +106,7 @@ class EmailAddressTest extends TestCase
     public function testEmailAddressInvalidThrowException()
     {
         try {
-            $emailAddress = new EmailAddress('email@example');
-            $emailAddress->validate();
+            new EmailAddress('email@example');
         } catch (EmailAddressIsNotValidException $e) {
             $this->assertEquals(
                 'Email address "email@example" is not valid.',
@@ -116,11 +122,8 @@ class EmailAddressTest extends TestCase
      */
     private static function fakeFactory(string $emailAddress): stdClass
     {
-        $email = new EmailAddress($emailAddress);
-        $email->validate();
-
         $stdObject = new stdClass();
-        $stdObject->email = $email;
+        $stdObject->email = new EmailAddress($emailAddress);
 
         return $stdObject;
     }
