@@ -5,7 +5,7 @@ namespace Atournayre\Component\Domain\Type;
 use Atournayre\Component\Domain\Constraint as Assert;
 use Symfony\Component\Validator\Constraint;
 
-class CustomType
+class TypePersonnalise
 {
     /**
      * @param mixed|null         $valeur
@@ -13,7 +13,7 @@ class CustomType
      *
      * @return bool
      */
-    private function isNotValid($valeur = null, array $contraintes = null): bool
+    private function nEstPasValide($valeur = null, array $contraintes = null): bool
     {
         if (count($contraintes) === 0) {
             return false;
@@ -30,6 +30,6 @@ class CustomType
      */
     public function verifierLaValidite($valeur = null, array $contraintes = null): bool
     {
-        return !$this->isNotValid($valeur, $contraintes);
+        return !$this->nEstPasValide($valeur, $contraintes);
     }
 }

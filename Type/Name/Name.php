@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace Atournayre\Component\Domain\Type\LastName;
 
 use Atournayre\Component\Domain\Constraint as Assert;
-use Atournayre\Component\Domain\Type\CustomType;
+use Atournayre\Component\Domain\Type\TypePersonnalise;
 use Atournayre\Component\Domain\Type\ValidationInterface;
 
-class Name extends CustomType implements ValidationInterface
+class Name extends TypePersonnalise implements ValidationInterface
 {
     /**
      * @var string|null
