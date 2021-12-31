@@ -5,13 +5,11 @@
 ```php
 use Atournayre\Component\Domain\EmailAddress\EmailAddress;
 
+// This method throws a EmailAddressException if not valid. 
 $emailAddress = new EmailAddress('email@example.com');
 
 // This method return true if email address is valid, false if not valid.
 $emailAddress->isValid();
-
-// This method throws a EmailAddressException if not valid. 
-$emailAddress->validate();
 
 // This method retrieve the domain of the email address. 
 $domain = $emailAddress->domain()
@@ -26,12 +24,13 @@ class CustomFactory
 {
     /**
      * @return stdClass
-     * @throws EmailAddressException
+     * @throws EmailAddressIsEmptyException
+     * @throws EmailAddressIsNotValidException
+     * @throws EmailAddressShouldContainsArobaseException
      */
     public function create(): stdClass
     {
         $email = new EmailAddress($emailAddress);
-        $email->validate();
 
         $stdObject = new stdClass();
         $stdObject->email = $email;
