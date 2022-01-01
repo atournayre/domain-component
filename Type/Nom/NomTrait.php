@@ -11,7 +11,7 @@ trait NomTrait
      * @var string|Nom|null
      */
     #[ORM\Column]
-    #[\Atournayre\Component\Domain\Constraint\Nom]
+    #[\Atournayre\Component\Domain\Constraint\Nom\Nom]
     public string|Nom|null $nom;
 
     /**
