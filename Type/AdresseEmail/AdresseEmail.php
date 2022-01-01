@@ -5,9 +5,8 @@ namespace Atournayre\Component\Domain\Type\AdresseEmail;
 
 use Atournayre\Component\Domain\Constraint as Assert;
 use Atournayre\Component\Domain\Type\TypePersonnalise;
-use Atournayre\Component\Domain\Type\ValidationInterface;
 
-class AdresseEmail extends TypePersonnalise implements ValidationInterface
+class AdresseEmail extends TypePersonnalise
 {
     /**
      * @return array

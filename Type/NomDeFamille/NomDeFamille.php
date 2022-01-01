@@ -5,9 +5,8 @@ namespace Atournayre\Component\Domain\Type\NomDeFamille;
 
 use Atournayre\Component\Domain\Constraint as Assert;
 use Atournayre\Component\Domain\Type\TypePersonnalise;
-use Atournayre\Component\Domain\Type\ValidationInterface;
 
-class NomDeFamille extends TypePersonnalise implements ValidationInterface
+class NomDeFamille extends TypePersonnalise
 {
     /**
      * @return array
