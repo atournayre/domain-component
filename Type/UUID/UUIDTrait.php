@@ -5,6 +5,7 @@ namespace Atournayre\Component\Domain\Type\UUID;
 
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\Validator\Constraints\Uuid;
 
 trait UUIDTrait
 {
@@ -12,6 +13,7 @@ trait UUIDTrait
     #[ORM\GeneratedValue(strategy: "CUSTOM")]
     #[ORM\Column(type: 'uuid', unique: true)]
     #[ORM\CustomIdGenerator(class: "Ramsey\Uuid\Doctrine\UuidGenerator")]
+    #[Uuid]
     protected ?UuidInterface $id;
 
     /**
