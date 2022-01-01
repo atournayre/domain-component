@@ -21,9 +21,11 @@ use Atournayre\Component\Domain\AdresseEmail\AdresseEmail;
 class CustomFactory
 {
     /**
+     * @param string $emailAddress
+     *
      * @return stdClass
      */
-    public function creer(): stdClass
+    public function creer(string $emailAddress): stdClass
     {
         $email = new AdresseEmail($emailAddress);
 
