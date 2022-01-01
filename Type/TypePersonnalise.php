@@ -33,7 +33,21 @@ class TypePersonnalise
      */
     public function estValide(): bool
     {
-        return $this->verifierLaValidite($this->donneePersonnalisee, $this->contraintesDeValidation());
+        return !$this->nEstPasValide($this->contraintesDeValidation());
+    }
+
+    /**
+     * @param array|Constraint[] $contraintes
+     *
+     * @return bool
+     */
+    private function nEstPasValide(array $contraintes = null): bool
+    {
+        if (count($contraintes) === 0) {
+            return false;
+        }
+
+        return Assert\ConstraintValidator::hasViolations($this->donneePersonnalisee, $contraintes);
     }
 
     /**
@@ -42,31 +56,5 @@ class TypePersonnalise
     protected function contraintesDeValidation(): array
     {
         return [];
-    }
-
-    /**
-     * @param mixed|null         $valeur
-     * @param array|Constraint[] $contraintes
-     *
-     * @return bool
-     */
-    private function nEstPasValide($valeur = null, array $contraintes = null): bool
-    {
-        if (count($contraintes) === 0) {
-            return false;
-        }
-
-        return Assert\ConstraintValidator::hasViolations($valeur, $contraintes);
-    }
-
-    /**
-     * @param mixed|null         $valeur
-     * @param array|Constraint[] $contraintes
-     *
-     * @return bool
-     */
-    public function verifierLaValidite($valeur = null, array $contraintes = null): bool
-    {
-        return !$this->nEstPasValide($valeur, $contraintes);
     }
 }
