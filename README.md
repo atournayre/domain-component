@@ -27,6 +27,11 @@ composer require atournayre/domain-component
 
 Plus [Documentation](doc/doc.md)
 
+## Validation d'objet
+Un objet que l'on veut rentre "validable" doit étendre la classe ```Atournayre\Component\Domain\Validation\Validable```.
+
+Il disposera alors d'une méthode ```estValide()```.
+
 ## Traductions
 
 Dans controller, services ...
