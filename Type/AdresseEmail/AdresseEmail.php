@@ -10,34 +10,13 @@ use Atournayre\Component\Domain\Type\ValidationInterface;
 class AdresseEmail extends TypePersonnalise implements ValidationInterface
 {
     /**
-     * @var string|null
+     * @return array
      */
-    private ?string $adresseEmail;
-
-    /**
-     * @param string|null $adresseEmail
-     */
-    public function __construct(?string $adresseEmail)
+    protected function contraintesDeValidation(): array
     {
-        $this->adresseEmail = $adresseEmail;
-    }
-
-    /**
-     * @return bool
-     */
-    public function estValide(): bool
-    {
-        return $this->verifierLaValidite($this->adresseEmail, [
+        return [
             new Assert\AdresseEmail\AdresseEmail(),
-        ]);
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->adresseEmail;
+        ];
     }
 
     /**
@@ -46,9 +25,9 @@ class AdresseEmail extends TypePersonnalise implements ValidationInterface
     public function domaine(): string
     {
         return substr(
-            $this->adresseEmail,
-            strpos($this->adresseEmail, '@') + 1,
-            strlen($this->adresseEmail)
+            $this->donneePersonnalisee,
+            strpos($this->donneePersonnalisee, '@') + 1,
+            strlen($this->donneePersonnalisee)
         );
     }
 }

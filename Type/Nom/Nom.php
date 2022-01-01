@@ -10,33 +10,12 @@ use Atournayre\Component\Domain\Type\ValidationInterface;
 class Nom extends TypePersonnalise implements ValidationInterface
 {
     /**
-     * @var string|null
+     * @return array
      */
-    protected ?string $nom;
-
-    /**
-     * @param ?string $nom
-     */
-    public function __construct(?string $nom)
+    protected function contraintesDeValidation(): array
     {
-        $this->nom = $nom;
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->nom;
-    }
-
-    /**
-     * @return bool
-     */
-    public function estValide(): bool
-    {
-        return $this->verifierLaValidite($this->nom, [
+        return [
             new Assert\Nom\Nom(),
-        ]);
+        ];
     }
 }
