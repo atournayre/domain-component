@@ -12,14 +12,14 @@ class Nom extends TypePersonnalise implements ValidationInterface
     /**
      * @var string|null
      */
-    protected ?string $name;
+    protected ?string $nom;
 
     /**
-     * @param ?string $name
+     * @param ?string $nom
      */
-    public function __construct(?string $name)
+    public function __construct(?string $nom)
     {
-        $this->name = $name;
+        $this->nom = $nom;
     }
 
     /**
@@ -27,7 +27,7 @@ class Nom extends TypePersonnalise implements ValidationInterface
      */
     public function __toString(): string
     {
-        return $this->name;
+        return $this->nom;
     }
 
     /**
@@ -35,7 +35,7 @@ class Nom extends TypePersonnalise implements ValidationInterface
      */
     public function estValide(): bool
     {
-        return $this->verifierLaValidite($this->name, [
+        return $this->verifierLaValidite($this->nom, [
             new Assert\Nom\Nom(),
         ]);
     }

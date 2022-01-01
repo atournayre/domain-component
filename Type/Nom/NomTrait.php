@@ -12,24 +12,24 @@ trait NomTrait
      */
     #[ORM\Column]
     #[\Atournayre\Component\Domain\Constraint\Nom]
-    public string|Nom|null $name;
+    public string|Nom|null $nom;
 
     /**
      * @return string
      */
     public function getNom(): string
     {
-        return (string) $this->name;
+        return (string) $this->nom;
     }
 
     /**
-     * @param string|null $name
+     * @param string|null $nom
      *
      * @return $this
      */
-    public function setNom(?string $name): static
+    public function setNom(?string $nom): static
     {
-        $this->name = new Nom($name);
+        $this->nom = new Nom($nom);
         return $this;
     }
 }
