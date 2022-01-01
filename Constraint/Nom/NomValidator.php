@@ -8,6 +8,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\NotEqualTo;
 use Symfony\Component\Validator\Constraints\NotNull;
+use Symfony\Component\Validator\Constraints\Type;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class NomValidator extends ConstraintValidator
@@ -26,8 +27,9 @@ class NomValidator extends ConstraintValidator
             new NotNull(),
             new NotEqualTo(''),
             new Length([
-                   'min' => 3,
-               ]),
+                'min' => 3,
+            ]),
+            new Type(['alpha']),
         ]);
     }
 }
