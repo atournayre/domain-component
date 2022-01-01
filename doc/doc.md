@@ -1,20 +1,20 @@
 # Documentation
 
-## Email
+## Adresse email
 
 ```php
 use Atournayre\Component\Domain\AdresseEmail\AdresseEmail;
 
 $emailAddress = new AdresseEmail('email@example.com');
 
-// This method return true if email address is valid, false if not valid.
-$emailAddress->isValid();
+// Cette méthode retourne true si l'adresse email est valide, false si non valide.
+$emailAddress->estValide();
 
-// This method retrieve the domain of the email address. 
-$domain = $emailAddress->domain()
+// Cette méthode retourne le nom de domaine d'une adresse email. 
+$domaine = $emailAddress->domaine()
 ```
 
-### Example of validation usage
+### Example d'utilisation dans une factory
 ```php
 use Atournayre\Component\Domain\AdresseEmail\AdresseEmail;
 
@@ -23,14 +23,14 @@ class CustomFactory
     /**
      * @return stdClass
      */
-    public function create(): stdClass
+    public function creer(): stdClass
     {
         $email = new AdresseEmail($emailAddress);
 
-        $stdObject = new stdClass();
-        $stdObject->email = $email;
+        $objet = new stdClass();
+        $objet->email = $email;
 
-        return $stdObject;
+        return $objet;
     }
 }
 ```

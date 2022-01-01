@@ -1,6 +1,11 @@
 # Domain Component
 
-This component provide custom types with validation rules for Domain entities.
+> ⚠️ **Développement en cours** ⚠️
+> 
+> Ne pas utiliser en production
+
+Ce composant met à disposition des fonctionnalités utilisables dans le Domaine d'une application.
+
 
 ## Installation
 ```shell
@@ -8,42 +13,23 @@ composer require atournayre/domain-component
 ```
 
 ## Traits
+* AdresseEmail
+* Nom
+* NomDeFamille
 * UUID
 
-## Custom types
-| Type | Description |
-|---|---|
-| AdresseEmail | Email addresses |
-| NomDeFamille | Human last name |
+## Types personnalisés
+| Type | Description    |
+|---|----------------|
+| AdresseEmail | Adresse email  |
+| Nom | Nom            |
+| NomDeFamille | Nom de famille |
 
-More [Documentation](doc/doc.md)
+Plus [Documentation](doc/doc.md)
 
-## Validation interface
+## Traductions
 
-Each custom type implement ``ValidationInterface``.
-
-Validation methods can be used in :
-* Domain entities
-* Form constraints
-* Api Platform Data Persister
-* anywhere!
-
-## Examples
-
-### Email address
-
-```php
-use Atournayre\Component\Domain\Type\AdresseEmail\AdresseEmail;
-
-$emailAddress = new AdresseEmail('email@example.com');
-
-// This method return true if email address is valid, false if not valid.
-$emailAddress->estValide();
-```
-
-## Translations
-
-In controller, services ...
+Dans controller, services ...
 ```php
 use Atournayre\Component\Domain\Type\Exception\Exception;
 
@@ -53,14 +39,14 @@ catch(Exception $e) {
 }
 ```
 
-In Twig
+Dans Twig
 ```html
 <div class="alert alert-danger">{{ error.messageKey|trans|format(error.messageData) }}</div>
 ```
 
 
-## Contributing
+## Contribuer
 
-Of course, open source is fueled by everyone's ability to give just a little bit of their time for the greater good. If you'd like to see a feature or add some of your own happy words, awesome! Tou can request it - but creating a pull request is an even better way to get things done.
+Vous voulez une nouvelle fonctionnalité ? Vous pouvez la demander mais créer une pull request est le meilleur moyen de l'obtenir.
 
-Either way, please feel comfortable submitting issues or pull requests: all contributions and questions are warmly appreciated :).
+Toutes les contributions sont les bienvenues.
