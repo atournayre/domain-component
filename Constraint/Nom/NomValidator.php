@@ -8,11 +8,13 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\NotEqualTo;
 use Symfony\Component\Validator\Constraints\NotNull;
-use Symfony\Component\Validator\Constraints\Type;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class NomValidator extends ConstraintValidator
 {
+    private const CARACTERES_AUTORISES = "/^[\(\)a-z ,.'-]+$/i";
+
     /**
      * {@inheritdoc}
      */
@@ -29,7 +31,11 @@ class NomValidator extends ConstraintValidator
             new Length([
                 'min' => 3,
             ]),
-            new Type(['alpha']),
+            new Regex([
+                'pattern' => self::CARACTERES_AUTORISES,
+                'match' => true,
+                'message' => 'Le nom contient des caractères non autorisés.',
+            ]),
         ]);
     }
 }
