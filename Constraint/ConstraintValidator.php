@@ -15,7 +15,7 @@ class ConstraintValidator extends SymfonyConstraintValidator
      *
      * @return bool
      */
-    public static function hasViolations($value = null, array $constraints = null): bool
+    public static function hasViolations(mixed $value = null, array $constraints = null): bool
     {
         return self::createContraintsViolations($value, $constraints)
             ->has(0);
@@ -28,7 +28,7 @@ class ConstraintValidator extends SymfonyConstraintValidator
      * @return ConstraintViolationListInterface
      */
     public static function createContraintsViolations(
-        $valeur = null,
+        mixed $valeur = null,
         array $contraintes = null
     ): ConstraintViolationListInterface
     {
@@ -53,7 +53,7 @@ class ConstraintValidator extends SymfonyConstraintValidator
      *
      * @return void
      */
-    protected function validateConstraints($value = null, array $constraints = null)
+    protected function validateConstraints(mixed $value = null, array $constraints = null)
     {
         $violations = self::createContraintsViolations($value, $constraints);
 
