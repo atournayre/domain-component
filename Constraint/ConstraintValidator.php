@@ -42,9 +42,8 @@ class ConstraintValidator extends SymfonyConstraintValidator
      *
      * @return void
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint): void
     {
-        // TODO: Implement validate() method.
     }
 
     /**
@@ -53,7 +52,7 @@ class ConstraintValidator extends SymfonyConstraintValidator
      *
      * @return void
      */
-    protected function validateConstraints($value = null, array $constraints = null)
+    protected function validateConstraints($value = null, array $constraints = null): void
     {
         $violations = self::createContraintsViolations($value, $constraints);
 

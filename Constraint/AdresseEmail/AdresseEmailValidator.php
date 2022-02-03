@@ -12,7 +12,7 @@ class AdresseEmailValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof AdresseEmail) {
             throw new UnexpectedTypeException($constraint, AdresseEmail::class);
