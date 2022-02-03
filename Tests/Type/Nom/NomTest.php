@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Aroban\Component\Domain\Tests\Type;
 
@@ -7,12 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class NomTest extends TestCase
 {
-    public function testNomComposeDeChiffreEstInValide()
-    {
-        $nomDeFamille = new Nom(1);
-        $this->assertFalse($nomDeFamille->estValide());
-    }
-
     public function testNomComposeDeChiffreEnTantQueChaineEstInValide()
     {
         $nomDeFamille = new Nom('1');
