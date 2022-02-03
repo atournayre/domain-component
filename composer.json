@@ -1,5 +1,5 @@
 {
-    "name": "atournayre/domain-component",
+    "name": "gitaroban/domain-component",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Atournayre\\Component\\Domain\\": ""
+            "Aroban\\Component\\Domain\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -25,7 +25,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Atournayre\\Component\\Domain\\Tests\\": ""
+            "Aroban\\Component\\Domain\\Tests\\": ""
         }
     },
     "minimum-stability": "stable",

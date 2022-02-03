@@ -1,9 +1,9 @@
 <?php
 
-namespace Atournayre\Component\Domain\Tests\Type;
+namespace Aroban\Component\Domain\Tests\Type;
 
-use Atournayre\Component\Domain\Type\AdresseEmail\AdresseEmail;
-use Atournayre\Component\Domain\Exception\ExceptionInterface;
+use Aroban\Component\Domain\Type\AdresseEmail\AdresseEmail;
+use Aroban\Component\Domain\Exception\ExceptionInterface;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 

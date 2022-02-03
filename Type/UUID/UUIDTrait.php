@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Atournayre\Component\Domain\Type\UUID;
+namespace Aroban\Component\Domain\Type\UUID;
 
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\UuidInterface;

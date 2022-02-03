@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Validation;
+namespace Aroban\Component\Domain\Validation;
 
 abstract class Validable
 {

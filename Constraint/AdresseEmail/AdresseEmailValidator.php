@@ -1,8 +1,8 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\AdresseEmail;
+namespace Aroban\Component\Domain\Constraint\AdresseEmail;
 
-use Atournayre\Component\Domain\Constraint\ConstraintValidator;
+use Aroban\Component\Domain\Constraint\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;

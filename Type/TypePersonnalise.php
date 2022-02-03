@@ -1,8 +1,8 @@
 <?php
 
-namespace Atournayre\Component\Domain\Type;
+namespace Aroban\Component\Domain\Type;
 
-use Atournayre\Component\Domain\Constraint as Assert;
+use Aroban\Component\Domain\Constraint as Assert;
 use Symfony\Component\Validator\Constraint;
 
 class TypePersonnalise

@@ -1,8 +1,8 @@
 <?php
 
-namespace Atournayre\Component\Domain\Tests\Type;
+namespace Aroban\Component\Domain\Tests\Type;
 
-use Atournayre\Component\Domain\Type\Nom\Nom;
+use Aroban\Component\Domain\Type\Nom\Nom;
 use PHPUnit\Framework\TestCase;
 
 class NomTest extends TestCase

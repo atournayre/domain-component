@@ -1,8 +1,8 @@
 <?php
 
-namespace Atournayre\Component\Domain\Tests\Type\Prénom;
+namespace Aroban\Component\Domain\Tests\Type\Prénom;
 
-use Atournayre\Component\Domain\Type\Prénom\Prénom;
+use Aroban\Component\Domain\Type\Prénom\Prénom;
 use PHPUnit\Framework\TestCase;
 
 class PrénomTest extends TestCase

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Atournayre\Component\Domain\Type\AdresseEmail;
+namespace Aroban\Component\Domain\Type\AdresseEmail;
 
-use Atournayre\Component\Domain\Constraint as Assert;
-use Atournayre\Component\Domain\Type\TypePersonnalise;
+use Aroban\Component\Domain\Constraint as Assert;
+use Aroban\Component\Domain\Type\TypePersonnalise;
 
 class AdresseEmail extends TypePersonnalise
 {

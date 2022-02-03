@@ -26,7 +26,7 @@ composer require atournayre/domain-component
 Plus [Documentation](doc/doc.md)
 
 ## Validation d'objet
-Un objet que l'on veut rentre "validable" doit étendre la classe ```Atournayre\Component\Domain\Validation\Validable```.
+Un objet que l'on veut rentre "validable" doit étendre la classe ```Aroban\Component\Domain\Validation\Validable```.
 
 Il disposera alors d'une méthode ```estValide()```.
 
@@ -34,7 +34,7 @@ Il disposera alors d'une méthode ```estValide()```.
 
 Dans controller, services ...
 ```php
-use Atournayre\Component\Domain\Type\Exception\Exception;
+use Aroban\Component\Domain\Type\Exception\Exception;
 
 try {}
 catch(Exception $e) {

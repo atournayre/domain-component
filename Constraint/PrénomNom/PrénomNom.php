@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\PrénomNom;
+namespace Aroban\Component\Domain\Constraint\PrénomNom;
 
 use Symfony\Component\Validator\Constraint;
 
