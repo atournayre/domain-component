@@ -18,35 +18,14 @@ composer require atournayre/domain-component
 * UUID
 
 ## Types personnalisés
-| Type | Description    |
-|---|----------------|
-| AdresseEmail | Adresse email  |
-| Nom | Nom            |
+| Type         | Description   |
+|--------------|---------------|
+| AdresseEmail | Adresse email |
+| Nom          | Nom           |
+| Prénom       | Prénom        |
+| UUID         | UUID          |
 
 Plus [Documentation](doc/doc.md)
-
-## Validation d'objet
-Un objet que l'on veut rentre "validable" doit étendre la classe ```Aroban\Component\Domain\Validation\Validable```.
-
-Il disposera alors d'une méthode ```estValide()```.
-
-## Traductions
-
-Dans controller, services ...
-```php
-use Aroban\Component\Domain\Type\Exception\Exception;
-
-try {}
-catch(Exception $e) {
-     $translatedMessage = vsprintf($translator->trans($e->getMessageKey()), $e->getMessageData()));
-}
-```
-
-Dans Twig
-```html
-<div class="alert alert-danger">{{ error.messageKey|trans|format(error.messageData) }}</div>
-```
-
 
 ## Contribuer
 
