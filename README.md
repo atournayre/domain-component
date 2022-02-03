@@ -18,10 +18,12 @@ composer require atournayre/domain-component
 * UUID
 
 ## Types personnalisés
-| Type | Description    |
-|---|----------------|
-| AdresseEmail | Adresse email  |
-| Nom | Nom            |
+| Type         | Description   |
+|--------------|---------------|
+| AdresseEmail | Adresse email |
+| Nom          | Nom           |
+| Prénom       | Prénom        |
+| UUID         | UUID          |
 
 Plus [Documentation](doc/doc.md)
 
