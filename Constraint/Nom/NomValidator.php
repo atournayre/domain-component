@@ -4,9 +4,6 @@ namespace Atournayre\Component\Domain\Constraint\Nom;
 
 use Atournayre\Component\Domain\Constraint\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\NotEqualTo;
-use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
@@ -24,9 +21,6 @@ class NomValidator extends ConstraintValidator
         }
 
         $this->validateConstraints($value, [
-            new NotBlank(),
-            new NotNull(),
-            new NotEqualTo(''),
             new Regex([
                 'pattern' => self::CARACTERES_AUTORISES,
                 'match' => true,
