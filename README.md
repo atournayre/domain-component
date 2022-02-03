@@ -15,6 +15,7 @@ composer require atournayre/domain-component
 ## Traits
 * AdresseEmail
 * Nom
+* Prénom
 * UUID
 
 ## Types personnalisés
