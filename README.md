@@ -9,7 +9,7 @@ Ce composant met à disposition des fonctionnalités utilisables dans le Domaine
 
 ## Installation
 ```shell
-composer require atournayre/domain-component
+composer require gitaroban/domain-component
 ```
 
 ## Traits
