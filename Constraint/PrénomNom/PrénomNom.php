@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\NomDeFamille;
+namespace Atournayre\Component\Domain\Constraint\PrénomNom;
 
 use Symfony\Component\Validator\Constraint;
 
@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraint;
  * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  */
 #[\Attribute(\Attribute::TARGET_PROPERTY | \Attribute::TARGET_METHOD | \Attribute::IS_REPEATABLE)]
-class NomDeFamille extends Constraint
+class PrénomNom extends Constraint
 {
+    public string $message = 'Certains caractères ne sont pas autorisés.';
 }

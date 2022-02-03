@@ -15,7 +15,6 @@ composer require atournayre/domain-component
 ## Traits
 * AdresseEmail
 * Nom
-* NomDeFamille
 * UUID
 
 ## Types personnalisés
@@ -23,7 +22,6 @@ composer require atournayre/domain-component
 |---|----------------|
 | AdresseEmail | Adresse email  |
 | Nom | Nom            |
-| NomDeFamille | Nom de famille |
 
 Plus [Documentation](doc/doc.md)
 
