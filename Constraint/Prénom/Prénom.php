@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\Nom;
+namespace Atournayre\Component\Domain\Constraint\Prénom;
 
 use Atournayre\Component\Domain\Constraint\PrénomNom\PrénomNom;
 
@@ -9,7 +9,7 @@ use Atournayre\Component\Domain\Constraint\PrénomNom\PrénomNom;
  * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  */
 #[\Attribute(\Attribute::TARGET_PROPERTY | \Attribute::TARGET_METHOD | \Attribute::IS_REPEATABLE)]
-class Nom extends PrénomNom
+class Prénom extends PrénomNom
 {
-    public string $message = 'Le nom contient des caractères non autorisés.';
+    public string $message = 'Le prénom contient des caractères non autorisés.';
 }
