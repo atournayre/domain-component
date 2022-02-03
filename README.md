@@ -25,24 +25,6 @@ composer require atournayre/domain-component
 
 Plus [Documentation](doc/doc.md)
 
-## Traductions
-
-Dans controller, services ...
-```php
-use Aroban\Component\Domain\Type\Exception\Exception;
-
-try {}
-catch(Exception $e) {
-     $translatedMessage = vsprintf($translator->trans($e->getMessageKey()), $e->getMessageData()));
-}
-```
-
-Dans Twig
-```html
-<div class="alert alert-danger">{{ error.messageKey|trans|format(error.messageData) }}</div>
-```
-
-
 ## Contribuer
 
 Vous voulez une nouvelle fonctionnalité ? Vous pouvez la demander mais créer une pull request est le meilleur moyen de l'obtenir.
