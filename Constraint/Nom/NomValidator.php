@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class NomValidator extends ConstraintValidator
 {
-    private const CARACTERES_AUTORISES = "/^[\(\)a-z ,.'-]+$/i";
+    private const CARACTERES_AUTORISES = "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u";
 
     /**
      * {@inheritdoc}

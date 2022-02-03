@@ -25,6 +25,7 @@ class NomTest extends TestCase
             'Mathias d\'Arras',
             'Martin Luther King jr.',
             'Hector Sausage-Hausen',
+            'Hectðr Sausage-Hausen',
         ];
 
         foreach ($noms as $nom) {
