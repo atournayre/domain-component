@@ -3,7 +3,7 @@
 ## Adresse email
 
 ```php
-use Atournayre\Component\Domain\AdresseEmail\AdresseEmail;
+use Aroban\Component\Domain\AdresseEmail\AdresseEmail;
 
 $emailAddress = new AdresseEmail('email@example.com');
 
@@ -16,7 +16,7 @@ $domaine = $emailAddress->domaine()
 
 ### Example d'utilisation dans une factory
 ```php
-use Atournayre\Component\Domain\AdresseEmail\AdresseEmail;
+use Aroban\Component\Domain\AdresseEmail\AdresseEmail;
 
 class CustomFactory
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\AdresseEmail;
+namespace Aroban\Component\Domain\Constraint\AdresseEmail;
 
 use Symfony\Component\Validator\Constraint;
 

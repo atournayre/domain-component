@@ -1,8 +1,8 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\Prénom;
+namespace Aroban\Component\Domain\Constraint\Prénom;
 
-use Atournayre\Component\Domain\Constraint\PrénomNom\PrénomNomValidator;
+use Aroban\Component\Domain\Constraint\PrénomNom\PrénomNomValidator;
 
 class PrénomValidator extends PrénomNomValidator
 {

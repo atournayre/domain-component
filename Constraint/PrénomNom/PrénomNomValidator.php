@@ -1,8 +1,8 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\PrénomNom;
+namespace Aroban\Component\Domain\Constraint\PrénomNom;
 
-use Atournayre\Component\Domain\Constraint\ConstraintValidator;
+use Aroban\Component\Domain\Constraint\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;

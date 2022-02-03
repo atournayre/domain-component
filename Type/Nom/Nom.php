@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Atournayre\Component\Domain\Type\Nom;
+namespace Aroban\Component\Domain\Type\Nom;
 
-use Atournayre\Component\Domain\Constraint as Assert;
-use Atournayre\Component\Domain\Type\TypePersonnalise;
+use Aroban\Component\Domain\Constraint as Assert;
+use Aroban\Component\Domain\Type\TypePersonnalise;
 
 class Nom extends TypePersonnalise
 {

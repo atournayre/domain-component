@@ -1,6 +1,6 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint;
+namespace Aroban\Component\Domain\Constraint;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator as SymfonyConstraintValidator;

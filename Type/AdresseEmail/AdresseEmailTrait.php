@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Atournayre\Component\Domain\Type\AdresseEmail;
+namespace Aroban\Component\Domain\Type\AdresseEmail;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -11,7 +11,7 @@ trait AdresseEmailTrait
      * @var string|AdresseEmail|null
      */
     #[ORM\Column]
-    #[\Atournayre\Component\Domain\Constraint\AdresseEmail\AdresseEmail]
+    #[\Aroban\Component\Domain\Constraint\AdresseEmail\AdresseEmail]
     public string|AdresseEmail|null $adresseEmail;
 
     /**

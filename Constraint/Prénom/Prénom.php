@@ -1,8 +1,8 @@
 <?php
 
-namespace Atournayre\Component\Domain\Constraint\Prénom;
+namespace Aroban\Component\Domain\Constraint\Prénom;
 
-use Atournayre\Component\Domain\Constraint\PrénomNom\PrénomNom;
+use Aroban\Component\Domain\Constraint\PrénomNom\PrénomNom;
 
 /**
  * @Annotation
